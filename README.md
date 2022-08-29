@@ -22,6 +22,6 @@ Occasionally, the project will not save settings for some users. If this happens
 **Project->Properties->Debugging->Command Arguments**
 and type in the input file you want to use, the default text document, type "testinput.txt", or the name of your text file followed by the .txt extension. 
 
-## Rename a file
+## Acknowledgements 
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer
+ - Much of the documentation is in part thanks to Professor V. Miller, for a class which this was the term project, and was posted with permission, although this project will aim to expand upon it.  
