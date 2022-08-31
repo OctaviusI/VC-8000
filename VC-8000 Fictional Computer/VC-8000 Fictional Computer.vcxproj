@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="testinput.txt" />
+    <Text Include="factorial.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assem.cpp" />

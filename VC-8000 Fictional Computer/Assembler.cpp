@@ -124,8 +124,10 @@ void Assembler::TranslateAssemblyInstruction(Instruction& a_instruction, int a_l
     
 
      if (a_instruction.GetOpCode() == "ORG") { //If the instruction is an ORG, only send the
-        //location and original message.
-    }
+        //location and original message. Also, set the origin.
+        m_emul.setOrigin(stoi(a_instruction.GetOperand1()));
+
+     }
     
     else if (a_instruction.GetOpCode() == "DC") { //If the instruction is a DC, send all values,
         //filling contents with the value of the defined constant.
@@ -137,7 +139,7 @@ void Assembler::TranslateAssemblyInstruction(Instruction& a_instruction, int a_l
         //only send the location and original message.
     }
 
-    string org = a_instruction.GetInstruction();
+    
     
     if (contentAddition != "" && contentAddition!= "?????????") { //Ensure the content is not empty or that it's not 
         //in an error state before translating the string to insert.
