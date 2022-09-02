@@ -6,9 +6,10 @@ hay     store   1,y ; This stores the value from 1 into y.
         write    1,x ; The contents of x are outputed. Register 1 is ignored. 
         bp      1,hi ; If the contents of register 1 are greater than 0, go to address 'hi'.  
         halt ; This stops the execution of the machine language code. If we go past this, it's an error.
-; However, we still can use assembly language instructions. 
-x      dc      5
-y      ds      99
-b      dc      555
-a      dc      100
-        end
+
+; However, we still can use assembly language instructions, particularly for defining storages and constants.
+x      dc      5 ; defines a constant of 5 under label x 
+y      ds      99 ;defines a storage of capacity 99 under y. 
+b      dc      555 ; defines a constant of 555 under b. 
+a      dc      100 ;defines a constant of 100 under a. 
+       end ;indicates there are no more statements to translate. 
