@@ -41,6 +41,10 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="SymTab.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="E:\images\factorial.png" />
+    <Image Include="E:\images\test_input.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
