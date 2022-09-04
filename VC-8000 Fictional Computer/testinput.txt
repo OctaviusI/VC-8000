@@ -1,6 +1,6 @@
         ;this is the beginning of the program and also a comment.
-        org    100 ;This specifies where the program starts, by default it should be 100. 
-hi      read    x; This takes user input and puts it both into the memory storage x and the address under the label 'hi.' 
+        org    100 ; This specifies where the program starts, by default it should be 100. 
+hi      read    x ; This takes user input and puts it both into the memory storage x and the address under the label 'hi.' 
         load    1,x ; This loads the value from x and puts it into register 1. 
 hay     store   1,y ; This stores the value from 1 into y. 
         write    1,x ; The contents of x are outputed. Register 1 is ignored. 
@@ -9,7 +9,7 @@ hay     store   1,y ; This stores the value from 1 into y.
 
 ; However, we still can use assembly language instructions, particularly for defining storages and constants.
 x      dc      5 ; defines a constant of 5 under label x 
-y      ds      99 ;defines a storage of capacity 99 under y. 
+y      ds      99 ; defines a storage of capacity 99 under y. 
 b      dc      555 ; defines a constant of 555 under b. 
-a      dc      100 ;defines a constant of 100 under a. 
+a      dc      100 ; defines a constant of 100 under a. 
        end ;indicates there are no more statements to translate. 

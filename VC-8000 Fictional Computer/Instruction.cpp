@@ -2,7 +2,7 @@
 
 #include "Instruction.h"
 
-// parse an instruction and return its type.  Yes, I want a call by value.
+// parse an instruction and return its type.  Call by value to avoid any conflicts with referencing the line.
 Instruction::InstructionType Instruction::ParseInstruction(string a_line)
 {
     // Record the original statement.  This will be needed in the sceond pass.

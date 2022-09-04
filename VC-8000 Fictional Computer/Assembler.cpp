@@ -13,7 +13,6 @@ Assembler::Assembler( int argc, char *argv[] )
     // Nothing else to do here at this point.
 }  
 
-//test
 
 // Pass I establishes the location of the label. 
 void Assembler::PassI( ) 
