@@ -11,11 +11,15 @@ The VC8000 is a fictional decimal computer C++ designed to be compiled in Visual
  - 1,000,000 words of memory, with each word of memory consisting of 9 decimal digits.
  - 10 Registers.
 
+For more information about the features of the computer, click [here](https://github.com/pw45000/VC-8000/wiki/VC8000-Assembly-Language). For more information about the assembly language, click [here](https://github.com/pw45000/VC-8000/wiki/VC8000-Computer-and-OPCodes). 
+
 ## Running/Compilation
 
 Upon opening Visual Studio, simply choose "Clone a repository" and enter this project's url, and after the project is fully cloned, simply click "Local Windows Debugger" to run, and you should be all set! You can also change the build to release for faster performance. 
 
 For more information on cloning repositories in Visual Studio, click [here](https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo?view=vs-2022)
+
+If done correctly, one should see something similar to the [sample output page.] (https://github.com/pw45000/VC-8000.wiki.git)
 
 ## Setting the Input File For Use
 To set the input .txt file for use, select the following: 
