@@ -19,7 +19,7 @@ Upon opening Visual Studio, simply choose "Clone a repository" and enter this pr
 
 For more information on cloning repositories in Visual Studio, click [here](https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo?view=vs-2022)
 
-If done correctly, one should see something similar to the [sample output page.](https://github.com/pw45000/VC-8000.wiki.git)
+If done correctly, one should see something similar to the [sample output page.](https://github.com/pw45000/VC-8000/wiki/Sample-Output)
 
 ## Setting the Input File For Use
 To set the input .txt file for use, select the following: 
