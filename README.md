@@ -11,7 +11,7 @@ The VC8000 is a fictional decimal computer C++ built to be run on both Windows 3
  - 1,000,000 words of memory, with each word of memory consisting of 9 decimal digits.
  - 10 Registers.
 
-For more information about the features of the computer, click [here.](https://github.com/pw45000/VC-8000/wiki/VC8000-Assembly-Language). For more information about the assembly language, click [here.](https://github.com/pw45000/VC-8000/wiki/VC8000-Computer-and-OPCodes). 
+For more information about the features of the computer, click [here](https://github.com/pw45000/VC-8000/wiki/VC8000-Assembly-Language). For more information about the assembly language, click [here](https://github.com/pw45000/VC-8000/wiki/VC8000-Computer-and-OPCodes). 
 
 ## Running 
 
