@@ -17,13 +17,15 @@ For more information about the features of the computer, click [here](https://gi
 
 Simply download the release that matches your system the best. Extract the release, and simply drag and drop your program (in a .txt file) into "VC-8000 Fictional Computer.exe". 
 
+If done correctly using testinput.txt, one should see something similar to the [sample output page.](https://github.com/pw45000/VC-8000/wiki/VC8000-Sample-Output)
+
+
 ## Compilation/Building Code
 
 Upon opening Visual Studio, simply choose "Clone a repository" and enter this project's url, and after the project is fully cloned, simply click "Local Windows Debugger" to run, and you should be all set! You can also change the build to release for faster performance. 
 
 For more information on cloning repositories in Visual Studio, click [here.](https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo?view=vs-2022)
 
-If done correctly, one should see something similar to the [sample output page.](https://github.com/pw45000/VC-8000/wiki/VC8000-Sample-Output)
 
 ## Setting the Input File For Use
 To set the input .txt file for use, select the following: 
