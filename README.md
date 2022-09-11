@@ -1,6 +1,6 @@
 # VC8000 Fictional Computer
 
-The VC8000 is a fictional decimal computer C++ designed to be compiled in Visual Studio. 
+The VC8000 is a fictional decimal computer C++ built to be run on both Windows 32 and 64 bit systems.
 ## Features
 
  - An Assembler and Emulator for running programs through the use of a .txt file for input
@@ -13,7 +13,11 @@ The VC8000 is a fictional decimal computer C++ designed to be compiled in Visual
 
 For more information about the features of the computer, click [here](https://github.com/pw45000/VC-8000/wiki/VC8000-Assembly-Language). For more information about the assembly language, click [here](https://github.com/pw45000/VC-8000/wiki/VC8000-Computer-and-OPCodes). 
 
-## Running/Compilation
+## Running 
+
+Simply download the release that matches your system the best. Extract the release, and simply drag and drop your program (in a .txt file) into "VC-8000 Fictional Computer.exe". 
+
+## Compilation/Building Code
 
 Upon opening Visual Studio, simply choose "Clone a repository" and enter this project's url, and after the project is fully cloned, simply click "Local Windows Debugger" to run, and you should be all set! You can also change the build to release for faster performance. 
 
