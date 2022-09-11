@@ -1,0 +1,21 @@
+        org 100
+        read 0, n ;reads in input into address n. Register 0 is ignored. 
+more    load  1, n ;loads the value of 1 into n. This statement is saved under the label 'more' so we can go back to it later.
+
+;Here is a comment that sit on its own line. Also below is where machine language is stored.
+        mult 1, fac ; multiplies the value of register 1 into the contents of address fac. Note that we don't need to define constants before using them.
+        store 1, fac ; stores the value of register 1 into the address fact. 
+        load 1, n ; Inputs the contents of address n into register 1. 
+        sub 1, one ; Subtract the contents of register 1 from the contents of address one.
+        store 1, n ; stores the value of register 1 into address n. 
+        bp 1,more ; Go to address more if register 1 is positive.
+        write 0, fac ; Contents of address fac are displayed. 
+        halt ; stops execution of machine language.
+
+        
+        ;This is where we can only use assembly commands. Particularly, useful for defining labels and constants.
+n       ds 100 ; A placeholder to demonstrate that the VC8000 can define a storage of space 100.
+fac     dc 1 ; defines a constant of 1 under label fac. 
+one     dc 1 ; defines a constant of one under label one. 
+test    dc 1234 ; Demonstration of the fact that the VC8000 can store large constants. 
+        end ;indicates there are no more statements to translate. 

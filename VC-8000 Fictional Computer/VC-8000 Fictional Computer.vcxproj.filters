@@ -13,9 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Images">
+      <UniqueIdentifier>{d7ab50a7-4eac-48c4-a466-5d20fe33fa66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="testinput.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="factorial.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
@@ -67,5 +73,13 @@
     <ClInclude Include="SymTab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="E:\images\test_input.png">
+      <Filter>Images</Filter>
+    </Image>
+    <Image Include="E:\images\factorial.png">
+      <Filter>Images</Filter>
+    </Image>
   </ItemGroup>
 </Project>

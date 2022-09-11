@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="testinput.txt" />
+    <Text Include="factorial.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assem.cpp" />
@@ -39,6 +40,10 @@
     <ClInclude Include="Instruction.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="SymTab.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="E:\images\factorial.png" />
+    <Image Include="E:\images\test_input.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

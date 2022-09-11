@@ -14,6 +14,7 @@ public:
 
          m_memory.resize(MEMSZ, 0); //Prepares the size of both the registers and memory. 
          m_register.resize(REGSZ, 0);
+         m_ADDRESS_ORIGIN = 100;
     }
     
 
@@ -83,7 +84,8 @@ NAME
 
 SYNOPSIS
 
-            bool runProgram();
+            bool runProgram(int a_location);
+            a_location -> the location to be selected as the origin of the program.
 
 DESCRIPTION
 
@@ -102,11 +104,39 @@ RETURNS
     // Runs the program recorded in memory.
     bool runProgram( );
 
+
+
+    /**/
+/*
+
+NAME
+
+         setOrigin - Sets the original location for all code to be executed in the emulator.
+
+SYNOPSIS
+
+            void setOrigin();
+
+DESCRIPTION
+
+        This function will set the Origin, based on the ORG assembly instruction. This is where all labels, instructions, etc.. are stored
+        in the emulator's memory. 
+RETURNS
+
+        void
+
+
+*/
+/**/
+    void setOrigin(int a_location);
+
+
+
 private:
 
     vector<long long> m_memory;  	// Memory for the VC8000
     vector<long long> m_register; //Registers for the VC8000
-    const static int m_ADDRESS_ORIGIN = 100;
+    int m_ADDRESS_ORIGIN;
 };
 
 #endif

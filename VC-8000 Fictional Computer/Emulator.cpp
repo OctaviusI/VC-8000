@@ -3,6 +3,9 @@
 #include "Errors.h"
 
 
+
+
+
 bool emulator::insertMemory(int a_location, long long a_contents) {
 	if (a_location > 10000 || a_location < 0 ) { //checks if the memory will be inserted within bounds.
 		Errors::RecordError("Error: out of bounds"); //If it's not, record an error.
@@ -164,4 +167,9 @@ bool emulator::runProgram() {
 	Errors::RecordError("Emulator ran past memory. Terminating..."); 
 	return false;
 
+}
+
+
+void emulator::setOrigin(int a_location) {
+	m_ADDRESS_ORIGIN = a_location;
 }
