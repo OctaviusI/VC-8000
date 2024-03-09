@@ -1,6 +1,6 @@
 //
-// Class to manage error reporting. Note: all members are static so we can access them anywhere.
-// What other choices do we have to accomplish the same thing?
+// Note: all members are static so we can access them anywhere. 
+// Necessary in the sense that an error can occur in multiple places- the assembler, emulator, etc..
 //
 #ifndef _ERRORS_H
 #define _ERRORS_H

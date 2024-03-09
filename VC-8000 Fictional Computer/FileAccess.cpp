@@ -4,7 +4,7 @@
 #include "stdafx.h"
 #include "FileAccess.h"
 
-// Don't forget to comment the function headers.
+
 FileAccess::FileAccess( int argc, char *argv[] )
 {
     // Check that there is exactly one run time parameter.

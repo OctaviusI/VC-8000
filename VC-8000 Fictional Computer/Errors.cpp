@@ -15,7 +15,6 @@ void Errors::DisplayErrors() {
 }
 
 void Errors::RecordError(string a_emsg) {
-	//cout << a_emsg << endl;
 	m_ErrorMsgs.push_back(a_emsg);
 	m_ProgramHasErrors = true;
 }

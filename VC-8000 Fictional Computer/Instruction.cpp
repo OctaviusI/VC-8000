@@ -2,7 +2,7 @@
 
 #include "Instruction.h"
 
-// parse an instruction and return its type.  Call by value to avoid any conflicts with referencing the line.
+// Parse an instruction and return its type.  Call by value to avoid any conflicts with referencing the line.
 Instruction::InstructionType Instruction::ParseInstruction(string a_line)
 {
     // Record the original statement.  This will be needed in the sceond pass.
@@ -10,10 +10,6 @@ Instruction::InstructionType Instruction::ParseInstruction(string a_line)
 
     // Delete any comment from the line.
     DeleteComment( a_line );
-
-
-    // Removes any white space, so the line can be neatened when outputted.
-    //DeleteLeftWhitespaces(a_line);
 
     // Record label, opcode, and operands.  Up to you to deal with formatting errors.
     bool isNotFormatError = RecordFields( a_line );
@@ -33,10 +29,6 @@ Instruction::InstructionType Instruction::ParseInstruction(string a_line)
     if (m_OpCode == "end")
         return InstructionType::ST_End;
 
-   
-
-
-
     // Return the instruction type.
     return m_type;
 
@@ -50,7 +42,7 @@ bool Instruction::RecordFields( const string &a_line )
     // Get the fields that make up the instruction.
     bool isNotFormatError = ParseLineIntoFields( a_line, m_Label, m_OpCode, m_Operand1, m_Operand2);
 
-    // if code was a comment, there is nothing to do.
+    // If code was a comment, there is nothing to do.
     if (m_OpCode.empty() && m_Label.empty()) return isNotFormatError;
 
     // Record whether the operands are numeric and their value if they are.
@@ -64,9 +56,9 @@ bool Instruction::RecordFields( const string &a_line )
     transform(m_OpCode.begin(), m_OpCode.end(), m_OpCode.begin(), ::toupper);
 
 
-    //Check for Assembly formatting in each OPCode given its
-    //maximum and minimum range. If there's no errors, keep it as
-    //an assembly instruction.
+    // Check for Assembly formatting in each OPCode given its
+    // maximum and minimum range. If there's no errors, keep it as
+    // an assembly instruction.
     if (m_OpCode == "DS") { 
         if (IsValidConstant(m_Operand1, m_Operand2, 0, 999'999))
             m_type = InstructionType::ST_AssemblerInstr;
@@ -101,9 +93,7 @@ bool Instruction::RecordFields( const string &a_line )
            m_formatError.push_back("Statements such as END cannot have additional operands.");
            isNotFormatError = false;
        }
-    //used to find if the specified OPcode is in OPcodestorage.  
-
-    //Check if this is a machine language OPcode, if not, 
+    // Used to find if the specified OPcode is in OPcodestorage. If not, then throw an error. 
     else if (auto key = m_OPCodeStorage.find(m_OpCode); key != m_OPCodeStorage.end()) {
 
         m_NumOpCode = stoi(key->second); //Gather numeric opcode from the results
@@ -116,7 +106,7 @@ bool Instruction::RecordFields( const string &a_line )
             case 4:
             case 5:
             case 6: {
-                //ADD to STORE excpect a Register and a Label.
+                // ADD to STORE excpect a Register and a Label.
                 bool validArg1 = IsValidRegister(m_Operand1);
                 bool validArg2 = IsValidLabel(m_Operand2);
                 isNotFormatError = (validArg1 && validArg2) ? true : false;
@@ -125,7 +115,7 @@ bool Instruction::RecordFields( const string &a_line )
             case 7: 
             case 8: 
             case 9: 
-            case 10: { //ADDREG to DIVREG expects two Registers.
+            case 10: { // ADDREG to DIVREG expects two Registers.
                 bool validArg1 = IsValidRegister(m_Operand1);
                 bool validArg2 = IsValidRegister(m_Operand2);
                 isNotFormatError = (validArg1 && validArg2) ? true : false;
@@ -133,7 +123,7 @@ bool Instruction::RecordFields( const string &a_line )
             }
             case 11: 
             case 12:
-            case 13: { //Read, Write, and Branch expect one label or an ignored register and label.
+            case 13: { // Read, Write, and Branch expect one label or an ignored register and label.
                 bool validArg1 = IsValidLabel(m_Operand1,true);
                 if (validArg1 && m_Operand2=="") {
                     break;
@@ -158,13 +148,13 @@ bool Instruction::RecordFields( const string &a_line )
             }
             case 14:
             case 15:
-            case 16: { //Branch Positive to Branch Minus expects a Register and a Label.
+            case 16: { // Branch Positive to Branch Minus expects a Register and a Label.
                 bool validArg1 = IsValidRegister(m_Operand1);
                 bool validArg2 = IsValidLabel(m_Operand2);
                 isNotFormatError = (validArg1 && validArg2) ? true : false;
                 break;
             }
-            case 17: { //Halt expects no operands. 
+            case 17: { // Halt expects no operands. 
                 if (m_Operand1 != "" || m_Operand2 != "") {
                     m_formatError.push_back("Statements such as HALT cannot have operands.");
                     isNotFormatError = false;
@@ -172,7 +162,7 @@ bool Instruction::RecordFields( const string &a_line )
                 else
                     break;
             }
-            default: { //Copy of below line just to make sure this works.
+            default: { // Copy of below line just to make sure this works.
                 m_formatError.push_back("Statement unparsable, no opcode fits the given line...");
                 isNotFormatError = false; 
             }
@@ -185,9 +175,6 @@ bool Instruction::RecordFields( const string &a_line )
        m_formatError.push_back("Statement unparsable, no opcode fits the given line...");
        isNotFormatError = false;
     }
-
-
-
 
     return isNotFormatError;
 }
@@ -246,27 +233,27 @@ bool Instruction::isStrNumber(const string& a_str)
 bool Instruction::IsValidRegister(string& a_register) {
 
     
-    if (a_register == "") { //checks if register is blank.
+    if (a_register == "") { // Checks if register is blank.
         m_formatError.push_back( "Missing register operand or empty register field");
         return false;
     }
 
-    bool isNum = isStrNumber(a_register); //checks if register is numeric.
+    bool isNum = isStrNumber(a_register); // Checks if register is numeric.
     int translatedregister; 
-    if (isNum) { //if numeric, translate it.
+    if (isNum) { // If numeric, translate it.
         translatedregister = stoi(a_register);
     }
 
-    else { //Otherwise, record an error.
+    else { // Otherwise, record an error.
         m_formatError.push_back( "Register " + a_register + " is not numeric");
         a_register = "?";
         return false;
     }
 
-    if (translatedregister > -1 && translatedregister < 10) { //If the register is between 1 and 10, we can return.
+    if (translatedregister > -1 && translatedregister < 10) { // If the register is between 1 and 10, we can return.
         return true;
     }
-    else { //Otherwise, it's not a register, throw an error.
+    else { // Otherwise, it's not a register, throw an error.
         a_register = "?";
         m_formatError.push_back("Unknown Register " + a_register + ": Registers are only from 0 to 9");
         return false;
@@ -278,7 +265,7 @@ bool Instruction::IsValidRegister(string& a_register) {
 bool Instruction::IsValidLabel(string& a_label, bool a_nonDestructive) {
     
     if (a_label == "") {
-        if (!a_nonDestructive) { //So we don't mess up the contents of the ignored register 
+        if (!a_nonDestructive) { // So we don't mess up the contents of the ignored register 
             m_formatError.push_back("Missing label operand or label field empty");
             a_label = "??????";
         }
@@ -287,7 +274,7 @@ bool Instruction::IsValidLabel(string& a_label, bool a_nonDestructive) {
     
     
     if (a_label.size() > 10) {
-        if (!a_nonDestructive) { //So we don't mess up the contents of the ignored register
+        if (!a_nonDestructive) { // So we don't mess up the contents of the ignored register
             m_formatError.push_back("label size cannot be greater than 10.");
             a_label = "??????";
         }
@@ -295,7 +282,7 @@ bool Instruction::IsValidLabel(string& a_label, bool a_nonDestructive) {
     }
 
     if (!isalpha(a_label[0])) {
-        if (!a_nonDestructive) { //So we don't mess up the contents of the ignored register 
+        if (!a_nonDestructive) { // So we don't mess up the contents of the ignored register 
             m_formatError.push_back("Start of label must be a letter, got label " + a_label + " instead.");
             a_label = "??????";
         }
@@ -303,7 +290,7 @@ bool Instruction::IsValidLabel(string& a_label, bool a_nonDestructive) {
     }
 
     for (auto itr = a_label.begin(); itr!= a_label.end(); itr++)
-        if (!isalnum(*itr)) { //So we don't mess up the contents of the ignored register 
+        if (!isalnum(*itr)) { // So we don't mess up the contents of the ignored register 
             if (!a_nonDestructive) {
                 m_formatError.push_back("Non alphanumeric character in label: " + *itr);
                 a_label = "??????";
@@ -313,7 +300,6 @@ bool Instruction::IsValidLabel(string& a_label, bool a_nonDestructive) {
     return true; 
 
 }
-
 
 
 bool Instruction::IsValidConstant(string& a_constant, string& extraArg, int lowerBound, int upperBound) {

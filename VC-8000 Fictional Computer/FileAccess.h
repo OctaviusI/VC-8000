@@ -81,7 +81,7 @@ public:
 
 private:
 
-    ifstream m_sfile;		// Source file object.
+    ifstream m_sfile;		// Source file object for assembly language program. 
 };
 #endif
 

@@ -40,8 +40,8 @@ void SymbolTable::DisplaySymbolTable() {
 
 
 bool SymbolTable::LookupSymbol(const string& a_symbol, int& a_loc) { 
-    auto foundvalue = m_symbolTable.find(a_symbol) ; //look through symbol table
-    if (foundvalue != m_symbolTable.end()) { //if it's found, put the location as the vlaue.
+    auto foundvalue = m_symbolTable.find(a_symbol) ; // Check if the passed symbol is recorded.
+    if (foundvalue != m_symbolTable.end()) { // If it's found, put the location as the value.
         a_loc = foundvalue->second;
         return true;
     }

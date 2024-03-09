@@ -1,6 +1,3 @@
-//
-//		Emulator class - supports the emulation of VC8000 programs
-//
 #ifndef _EMULATOR_H      // UNIX way of preventing multiple inclusions.
 #define _EMULATOR_H
 
@@ -50,7 +47,7 @@ public:
 
 NAME
 
-         ml_Read - Reads input from the user in the emulator.
+         ml_Read - Reads Machine Language input from the user.
 
 SYNOPSIS
 
@@ -80,7 +77,7 @@ RETURNS
 
 NAME
 
-         runProgram - Runs commands based on memory in the Emulator. 
+         runProgram - Runs Machine Language Instructions based on memory in the Emulator. 
 
 SYNOPSIS
 
@@ -90,7 +87,7 @@ SYNOPSIS
 DESCRIPTION
 
         This function will iteratively go through the memory of the emulator, parse all related information such as opcode, address, memory, etc..
-        and then run commands based upon the opcodes, and present errors if there are any, such as illegal opcodes or if the program goes past it's own memory.
+        and then run Machine Language instructions based upon the opcodes, and present errors if there are any, such as illegal opcodes or if the program goes past it's own memory.
 
 RETURNS
 
@@ -111,7 +108,7 @@ RETURNS
 
 NAME
 
-         setOrigin - Sets the original location for all code to be executed in the emulator.
+         setOrigin - Sets the original memory address for all code to be executed in the emulator in memory. 
 
 SYNOPSIS
 

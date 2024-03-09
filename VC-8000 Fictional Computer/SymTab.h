@@ -1,11 +1,7 @@
-//
-//		Symbol table class.
-//
 #pragma once
 
 
 
-// This class is our symbol table.
 class SymbolTable {
 
 public:
@@ -33,8 +29,6 @@ public:
     
     void AddSymbol( const string &a_symbol, int a_loc );
 
-    // Display the symbol table.
-
 
 
 
@@ -42,7 +36,7 @@ public:
     NAME
 
         DisplaySymbolTable - displays the currently stored symboltable by three values:
-        the number of symbol,
+        the number of symbol, opcode name, and address location. 
 
     SYNOPSIS
 
@@ -59,7 +53,7 @@ public:
 
 
 
-    void DisplaySymbolTable(); //{ cout << "Must implement: DisplaySymbolTable( )" << endl; }
+    void DisplaySymbolTable();
 
     
 
@@ -85,6 +79,6 @@ public:
 
 private:
 
-    // This is the actual symbol table.  The symbol is the key to the map.  The value is the location.
+    // Underlying data of the Symbol Table. The symbol is the key to the map.  The value is the location.
     map<string, int> m_symbolTable;
 };

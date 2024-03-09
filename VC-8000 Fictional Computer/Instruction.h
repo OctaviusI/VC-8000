@@ -1,6 +1,3 @@
-//
-// Class to parse and provide information about instructions.  Note: you will be adding more functionality.
-//
 #pragma once
 
 // The elements of an instruction.
@@ -10,8 +7,8 @@ public:
 
     Instruction( ) {};
 
-    // Codes to indicate the type of instruction we are processing.  Why is this inside the
-    // class?  We should make this an enum class.  We will do this during a lecture.
+    // Codes to indicate the type of instruction we are processing.  
+    // Each code is an enum for disambiguity in catching, and simplifies switch cases. 
     enum class InstructionType {
         ST_MachineLanguage, 	// A machine language instruction.
         ST_AssemblerInstr,      // Assembler Language instruction.
@@ -23,7 +20,7 @@ public:
     InstructionType ParseInstruction(string a_line);
 
     // Compute the location of the next instruction based on
-    //if the location has a location changing opcode.
+    // if the location has a location changing opcode.
     inline int LocationNextInstruction( int a_loc ) {
         if (m_OpCode == "ORG") //If the location is org, then change location. 
             return m_Operand1NumericValue;
@@ -34,11 +31,10 @@ public:
 
     // To access the label
     inline string &GetLabel( ) {
-
         return m_Label;
     };
 
-    //Gathers the private body members of the class.
+    // Gathers the private body members of the class.
     inline const string GetOperand1() const { return m_Operand1; }
     inline const string GetOperand2() { return m_Operand2; }
     inline const string GetInstruction() { return m_instruction; }
@@ -54,7 +50,6 @@ public:
 
     // To determine if a label is blank.
     inline bool isLabel( ) {
-
         return ! m_Label.empty();
     };
 
@@ -94,7 +89,7 @@ private:
         }
     }
 
-    //delete any whitespaces to the left to fix identation.
+    // Delete any whitespaces to the left to fix identation.
     string DeleteLeftWhitespaces(string& a_line) {
         const string WHITESPACE = " \n\r\t\f\v";
         size_t start = a_line.find_first_not_of(WHITESPACE);
@@ -121,7 +116,7 @@ private:
 
 
     RETURNS 
-        bool: true if runs without any errors (and has the instruction type with from the InstructionType enum). False if there's any errors. 
+        bool: True if recording is successful (and has the instruction type with from the InstructionType enum). False if there are any errors. 
     */
     
     bool RecordFields( const string &a_line );
@@ -129,7 +124,7 @@ private:
        /*
     NAME
 
-        ParseLineIntoFields - Parses the line into the fields of the instruction..
+        ParseLineIntoFields - Parses the line into the fields of the instruction.
 
     SYNOPSIS
 
@@ -183,7 +178,7 @@ private:
         /*
     NAME
 
-        IsValidRegister - Checks if the passed string is formatically valid as a register..
+        IsValidRegister - Checks if the passed string is formatically valid as a register.
 
     SYNOPSIS
 
@@ -239,7 +234,7 @@ private:
     /*
   NAME
 
-      isValidConstant - Checks if the passed string is formatically valid as a constant, depending on instruction
+      isValidConstant - Checks if the passed string is formatically valid as a constant, depending on instruction.
 
   SYNOPSIS
 
@@ -268,11 +263,11 @@ private:
 
 
 
-    //Storage of the title of each opcode and it's numeric value. 
-    //Stored in a map due to being name and value pairs, 
-    //and is a string so the numeric value is pre-formatted.
-    //that and attempting to store as an integer with preformated
-    //0s gives the error 'invalid octal number'. 
+    // Storage of the title of each opcode and it's numeric value. 
+    // Specifically, each is stored in a map due to being name and value pairs, 
+    // and is a string so the numeric value is pre-formatted.
+    // that and attempting to store as an integer with preformated
+    // 0s gives the error 'invalid octal number'. 
     const map<string, string> m_OPCodeStorage =
     {
         {"ADD", "01"}, {"SUB", "02"}, {"MULT", "03"},{"DIV", "04"},

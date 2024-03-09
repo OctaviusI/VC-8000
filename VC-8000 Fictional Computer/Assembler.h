@@ -1,7 +1,3 @@
-//
-//		Assembler class.  This is a container for all the components
-//		that make up the assembler.
-//
 #pragma once 
 
 #include "SymTab.h"
