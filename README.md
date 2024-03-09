@@ -19,10 +19,11 @@ Afterward, simply download the release that matches your system the best. Extrac
 
 To run a program on the VC8000, simply type the name of the downloaded exe and the directory of your selected source file. 
 
-In the case of utilizing the 64-bit exe and the sample program that comes with either release, the corresponding command would be: `vc8000_64.exe testinput.txt` 
+For example, running the 64-bit exe with the sample program(that comes with either release), the corresponding command would be: `vc8000_64.exe testinput.txt` 
 
-If done correctly, one should see something similar to the [sample output page.](https://github.com/pw45000/VC-8000/wiki/VC8000-Sample-Output)
-![An image showing the results of running the VC8000's test input command. Here, each number is output. If the number is negative, that number is outputted and then stops the program.](https://github.com/pw45000/VC-8000/raw/Experimental/VC-8000%20Fictional%20Computer/test_input.png?raw=true)
+If done correctly, one should see something similar to the following: 
+![An image showing the results of running the VC8000's test input command. Here, each number is output. If the number is negative, that number is outputted and then stops the program. Additionally, the symbol table is also printed prior to input.](https://github.com/pw45000/VC-8000/blob/master/VC-8000%20Fictional%20Computer/test_input.png?raw=true)
+Note that here every number following question marks is an inputted number. So, for instance, the line `? 7' is the user inputting 7.  
 
 ### Developer Information
 The VC8000 is capable of running programs via executing [Machine Instructions](https://github.com/pw45000/VC-8000/wiki/VC8000-Computer-and-OPCodes) and utilizing the VC8000's [Assembly Language](https://github.com/pw45000/VC-8000/wiki/VC8000-Assembly-Language). 
